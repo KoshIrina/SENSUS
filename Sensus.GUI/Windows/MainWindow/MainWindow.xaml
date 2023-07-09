@@ -237,13 +237,13 @@
                         Command="{Binding ClearStat}"
                         Style="{StaticResource Style_Default}"/>
 
-                <Button Content="Удалить запись"
+                <!--<Button Content="Удалить запись"
                         Command="{Binding DeleteStat}"
-                        Style="{StaticResource Style_Default}"/>
+                        Style="{StaticResource Style_Default}"/>-->
 
-                <Button Content="Редактировать запись"
+                <!--<Button Content="Редактировать запись"
                         Command="{Binding UpdateCommand}"
-                        Style="{StaticResource Style_Default}"/>
+                        Style="{StaticResource Style_Default}"/>-->
 
 
 

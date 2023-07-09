@@ -34,8 +34,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -49,8 +49,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -64,8 +64,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -79,8 +79,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -94,8 +94,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -109,8 +109,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -124,8 +124,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -139,8 +139,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -154,8 +154,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -169,8 +169,8 @@ namespace Sensus.GUI.WindowModels
 
                 AddStat.RaiseCanExecuteChanged();
                 ClearStat.RaiseCanExecuteChanged();
-                DeleteStat.RaiseCanExecuteChanged();
-                UpdateCommand.RaiseCanExecuteChanged();
+                //DeleteStat.RaiseCanExecuteChanged();
+                //UpdateCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -247,8 +247,8 @@ namespace Sensus.GUI.WindowModels
 
         public LambdaCommand AddStat { get; set; }
         public LambdaCommand ClearStat { get; set; }
-        public LambdaCommand DeleteStat { get; set; }
-        public LambdaCommand UpdateCommand { get; set; }
+        //public LambdaCommand DeleteStat { get; set; }
+        //public LambdaCommand UpdateCommand { get; set; }
 
         
         
@@ -324,70 +324,70 @@ namespace Sensus.GUI.WindowModels
                                  !string.IsNullOrWhiteSpace(Security)
             );
 
-            DeleteStat = new LambdaCommand(
-                execute: _ =>
-                {
-                   if(MessageBox.Show ("Вы точно хотите удалить запись?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question)==MessageBoxResult.Yes)
-                   {
-                        var CurrentItem = SelectedStat;
-                        Statistics.Remove(SelectedStat);
-                        db.Statistics.Remove(SelectedStat);
-                        db.SaveChanges();
+           // DeleteStat = new LambdaCommand(
+           //     execute: _ =>
+           //     {
+           //        if(MessageBox.Show ("Вы точно хотите удалить запись?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question)==MessageBoxResult.Yes)
+           //        {
+           //             var CurrentItem = SelectedStat;
+           //             Statistics.Remove(SelectedStat);
+           //             db.Statistics.Remove(SelectedStat);
+           //             db.SaveChanges();
                         
-                   }
+           //        }
 
-                },
-                canExecute: _ => !string.IsNullOrWhiteSpace(SelectedStat.Id.ToString())
-                                 //!string.IsNullOrWhiteSpace(DopAddress) &&
-                                 //!string.IsNullOrWhiteSpace(Fasad) &&
-                                 //!string.IsNullOrWhiteSpace(Name) &&
-                                 //!string.IsNullOrWhiteSpace(Phone) &&
-                                 //!string.IsNullOrWhiteSpace(Type) &&
-                                 //!string.IsNullOrWhiteSpace(Description) &&
-                                 //!string.IsNullOrWhiteSpace(Square.ToString()) &&
-                                 //!string.IsNullOrWhiteSpace(Parameters.ToString()) &&
-                                 //!string.IsNullOrWhiteSpace(Security)
-            );
+           //     },
+           //     canExecute: _ => !string.IsNullOrWhiteSpace(SelectedStat.Id.ToString())
+           //                      //!string.IsNullOrWhiteSpace(DopAddress) &&
+           //                      //!string.IsNullOrWhiteSpace(Fasad) &&
+           //                      //!string.IsNullOrWhiteSpace(Name) &&
+           //                      //!string.IsNullOrWhiteSpace(Phone) &&
+           //                      //!string.IsNullOrWhiteSpace(Type) &&
+           //                      //!string.IsNullOrWhiteSpace(Description) &&
+           //                      //!string.IsNullOrWhiteSpace(Square.ToString()) &&
+           //                      //!string.IsNullOrWhiteSpace(Parameters.ToString()) &&
+           //                      //!string.IsNullOrWhiteSpace(Security)
+           // );
 
-            //редактирование
-            UpdateCommand = new LambdaCommand(
-               execute: _ =>
-               {
-                   Statistic CurrentItem = SelectedStat;
-                   Statistics.Remove(CurrentItem);
-                   db.Statistics.Remove(CurrentItem);
-                   var item = new Statistic
-                   {
-                       Id= CurrentItem.Id,
-                       Address=Address,
-                       DopAddress=DopAddress,
-                       Fasad=Fasad,
-                       Name=Name,
-                       Phone=Phone,
-                       Type=Type,
-                       Description=Description,
-                       Square= Square,
-                       Parameters=Parameters,
-                       Security=Security
-                   };
-                       Statistics.Add(item);
-                       db.Statistics.Add(item);
-                       db.SaveChanges();
+           // //редактирование
+           // UpdateCommand = new LambdaCommand(
+           //    execute: _ =>
+           //    {
+           //        Statistic CurrentItem = SelectedStat;
+           //        Statistics.Remove(CurrentItem);
+           //        db.Statistics.Remove(CurrentItem);
+           //        var item = new Statistic
+           //        {
+           //            Id= CurrentItem.Id,
+           //            Address=Address,
+           //            DopAddress=DopAddress,
+           //            Fasad=Fasad,
+           //            Name=Name,
+           //            Phone=Phone,
+           //            Type=Type,
+           //            Description=Description,
+           //            Square= Square,
+           //            Parameters=Parameters,
+           //            Security=Security
+           //        };
+           //            Statistics.Add(item);
+           //            db.Statistics.Add(item);
+           //            db.SaveChanges();
                       
                   
 
-               },
-               canExecute: _ => string.IsNullOrWhiteSpace(Address)
-                                //!string.IsNullOrWhiteSpace(DopAddress) &&
-                                //!string.IsNullOrWhiteSpace(Fasad) &&
-                                //!string.IsNullOrWhiteSpace(Name) &&
-                                //!string.IsNullOrWhiteSpace(Phone) &&
-                                //!string.IsNullOrWhiteSpace(Type) &&
-                                //!string.IsNullOrWhiteSpace(Description) &&
-                                //!string.IsNullOrWhiteSpace(Square.ToString()) &&
-                                //!string.IsNullOrWhiteSpace(Parameters.ToString()) &&
-                                //!string.IsNullOrWhiteSpace(Security)
-           );
+           //    },
+           //    canExecute: _ => string.IsNullOrWhiteSpace(Address)
+           //                     //!string.IsNullOrWhiteSpace(DopAddress) &&
+           //                     //!string.IsNullOrWhiteSpace(Fasad) &&
+           //                     //!string.IsNullOrWhiteSpace(Name) &&
+           //                     //!string.IsNullOrWhiteSpace(Phone) &&
+           //                     //!string.IsNullOrWhiteSpace(Type) &&
+           //                     //!string.IsNullOrWhiteSpace(Description) &&
+           //                     //!string.IsNullOrWhiteSpace(Square.ToString()) &&
+           //                     //!string.IsNullOrWhiteSpace(Parameters.ToString()) &&
+           //                     //!string.IsNullOrWhiteSpace(Security)
+           //);
             
 
           
