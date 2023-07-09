@@ -1,0 +1,254 @@
+﻿<Window x:Class="Sensus.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wm="clr-namespace:Sensus.GUI.WindowModels"
+        xmlns:local="clr-namespace:Sensus.GUI"
+        mc:Ignorable="d"
+        Title="{StaticResource WindowTitle}"
+        Height="1100" Width="1000"
+        WindowState="Maximized"
+       
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowStyles.xaml" />
+    </Window.Resources>
+
+    <Window.DataContext>
+        <wm:MainWindowModel />
+    </Window.DataContext>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+           
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <ListView ItemsSource="{Binding Statistics}"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Адрес"
+                                        DisplayMemberBinding="{Binding Address}" />
+                        <GridViewColumn Header="Доп.к адресу"
+                                        DisplayMemberBinding="{Binding DopAddress}" />
+                        <GridViewColumn Header="Вывеска"
+                                        DisplayMemberBinding="{Binding Fasad}"/>
+                        <GridViewColumn Header="Юр. лицо"
+                                        DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Телефон"
+                                        DisplayMemberBinding="{Binding Phone}"/>
+                        <GridViewColumn Header="Тип точки"
+                                        DisplayMemberBinding="{Binding Type}"/>
+                        <GridViewColumn Header="Тип деят-сти"
+                                        DisplayMemberBinding="{Binding Description}"/>
+                        <GridViewColumn Header="Площадь"
+                                        DisplayMemberBinding="{Binding Square}"/>
+                        <GridViewColumn Header="Параметры"
+                                        DisplayMemberBinding="{Binding Parameters}"/>
+                        <GridViewColumn Header="Охран.фирма"
+                                        DisplayMemberBinding="{Binding Security}"/>
+
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           Content="ID"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Адрес"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Доп. к адресу"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding DopAddress, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Вывеска"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Fasad, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+
+
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Юр. лицо"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Телефон"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Тип точки"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Описание деятельности"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Площадь"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Square, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Параметры"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Parameters, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Content="Охранное предприятие"
+                           Style="{StaticResource Style_Label}" />
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Security, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource Style_Default}" />
+                </Grid>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Добавить"
+                        Command="{Binding AddStat}"
+                        Style="{StaticResource Style_Default}" />
+                <Button Content="Очистить"
+                        Command="{Binding ClearStat}"
+                        Style="{StaticResource Style_Default}"/>
+
+                <Button Content="Удалить запись"
+                        Command="{Binding DeleteStat}"
+                        Style="{StaticResource Style_Default}"/>
+
+                <Button Content="Редактировать запись"
+                        Command="{Binding UpdateCommand}"
+                        Style="{StaticResource Style_Default}"/>
+
+
+
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
